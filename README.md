@@ -1,3 +1,5 @@
+### NOTE: This tutorial is not complete, it still misses the users initial setup, certificates uploading and multiple domain certificate usage.
+
 # emailjs-postfix
 Setting up emailjs config for usage with Postfix.
 
