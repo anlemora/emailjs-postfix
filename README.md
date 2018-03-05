@@ -1,4 +1,4 @@
-### NOTE: This tutorial is not complete, it still misses the users initial setup, certificates uploading and multiple domain certificate usage.
+### NOTE: This tutorial is not complete, it still misses the multiple domain certificate usage.
 
 # emailjs-postfix
 Setting up emailjs config for usage with Postfix.
@@ -19,13 +19,13 @@ Setting up emailjs config for usage with Postfix.
 `usermod -aG sudo app`
 
 #### Upload the ssl files to the app user
-From your local machine:
+From your local machine:  
 `scp -r ssl_folder root@<yourserverip>:`
 
 The folder will be uploaded to your server at `/root/ssl_folder`
 
 #### Move the files to the app home folder and change the owner
-`mv /root/ssl_folder /home/app/encryption`
+`mv /root/ssl_folder /home/app/encryption`  
 `chown app:app /home/app/encryption`
 
 #### Configure MySQL
@@ -39,7 +39,7 @@ The folder will be uploaded to your server at `/root/ssl_folder`
 `mysql -u root -p servermail < DBMailConfig.sql`
 
 #### Create a copy of the default configuration and one of the master configuration.
-`cp /etc/postfix/main.cf /etc/postfix/main.cf.orig`
+`cp /etc/postfix/main.cf /etc/postfix/main.cf.orig`  
 `cp /etc/postfix/master.cf /etc/postfix/master.cf.orig`
 
 #### Replace `/etc/postfix/main.cf` and `/etc/postfix/master.cf` with the ones in this repo.
